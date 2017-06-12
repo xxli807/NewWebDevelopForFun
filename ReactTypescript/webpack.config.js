@@ -36,7 +36,6 @@ module.exports = {
     ],
     devServer: {
         contentBase: './ClientApp',
-        hot: true,
         historyApiFallback: true,
         port: 3000,
         host: 'localhost',
