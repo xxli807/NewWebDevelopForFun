@@ -6,6 +6,12 @@ module.exports = {
     module: {
         loaders: [
            {
+                test: /\.(js|jsx)$/,
+                enforce: 'pre',
+                loader: 'eslint-loader',
+                exclude: /node_modules/
+           },
+           {
                 test: /\.s?(c|a)ss$/,
                 loader: 'style-loader!css-loader!sass-loader'
             },
@@ -16,7 +22,14 @@ module.exports = {
                     'babel-loader'
                 ]
             }
-        ]
+        ] 
+        // preLoaders: [
+        // {
+        //     test: /\.(js|jsx)$/,
+        //     exclude: /node_modules/,
+        //     loader: 'eslint-loader'
+        // }
+// ]
     },
     entry: {
         app: ['./ClientApp/index.js']
@@ -34,6 +47,9 @@ module.exports = {
          // preload chunks
         new PreloadWebpackPlugin(),
     ],
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx' ]
+    },
     devServer: {
         contentBase: './ClientApp',
         historyApiFallback: true,
