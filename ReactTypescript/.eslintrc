@@ -14,7 +14,9 @@
     "prefer-arrow-callback": 0,
     "max-len": 0,
     "camelcase": 0,
-    "new-cap": 0
+    "new-cap": 0,
+    "linebreak-style": ["error", "windows"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "env": {
     "browser": true,
