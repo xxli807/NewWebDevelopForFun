@@ -1,0 +1,11 @@
+
+
+.loginContainer {
+    height: 100%;
+}
+
+.loginContainer .loginPanel {
+    height: 100%;
+    top: 40%;
+    overflow: hidden
+}

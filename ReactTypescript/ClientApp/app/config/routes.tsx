@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { Router, Route } from 'react-router';
-import { Layout } from '../share/Layout';
-// import Home from './components/Home';
+import { IndexRoute, Route } from 'react-router';
+import { Layout } from '../share/layout';
+import { Login } from '../features/login';
 // import FetchData from './components/FetchData';
 // import Counter from './components/Counter';
 
-export default <Route component={ Layout }>
-    <Route path='/' />
-    <Route path='/counter' />
-    <Route path='/fetchdata'></Route>
-</Route>;
+export default (
+    <div>
+        <Route path='/login' component={ Login } />
+        <Route path='/' component={ Layout }>
+            <Route path='counter' />
+            <Route path='fetchdata'></Route>
+        </Route>
+    </div>
+);
