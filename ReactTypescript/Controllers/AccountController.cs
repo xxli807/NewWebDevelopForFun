@@ -9,6 +9,14 @@ namespace ReactTypescript.Controllers
     [Route("api/[controller]")]
     public class AccountController : Controller
     {
+
+        [HttpPost]
+        public string ValidateLogin()
+        {
+            return null;
+        }
+
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
