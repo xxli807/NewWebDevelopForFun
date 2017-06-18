@@ -11,7 +11,7 @@ namespace ReactTypescript.Controllers
     {
 
         [HttpPost]
-        public string ValidateLogin()
+        public string ValidateLogin(string email, string password)
         {
             return null;
         }
