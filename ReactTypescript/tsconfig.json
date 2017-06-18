@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "target": "es6",
+    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "skipDefaultLibCheck": true
+  },
+  "exclude": [
+      "node_modules"
+  ]
+}
