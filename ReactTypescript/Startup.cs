@@ -39,6 +39,12 @@ namespace ReactTypescript
                 options.DefaultPolicyName = "AllowAllOrigins";
             });
 
+            // Adds IdentityServer
+            services.AddIdentityServer()
+                .AddInMemoryScopes(Config.GetScopes())
+                .AddInMemoryClients(Config.GetClients())
+                .AddAspNetIdentity<ApplicationUser>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +53,9 @@ namespace ReactTypescript
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseIdentityServer();
+
+            
 
             if (env.IsDevelopment())
             {
