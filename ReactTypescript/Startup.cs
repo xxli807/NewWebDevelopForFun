@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using IdentityServer4;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
+using ReactTypescript.Persistence.DBContext;
 
 namespace ReactTypescript
 {
@@ -29,6 +33,9 @@ namespace ReactTypescript
         {
             // Add framework services.
             services.AddMvc();
+            services.AddAuthorization();
+             
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddCors(options =>
             {
@@ -38,13 +45,7 @@ namespace ReactTypescript
                     .AllowAnyMethod());
                 options.DefaultPolicyName = "AllowAllOrigins";
             });
-
-            // Adds IdentityServer
-            services.AddIdentityServer()
-                .AddInMemoryScopes(Config.GetScopes())
-                .AddInMemoryClients(Config.GetClients())
-                .AddAspNetIdentity<ApplicationUser>();
-
+              
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +56,23 @@ namespace ReactTypescript
 
             app.UseIdentityServer();
 
-            
+            // middleware for external openid connect authentication
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
+                SignOutScheme = IdentityServerConstants.SignoutScheme,
+
+                DisplayName = "OpenID Connect",
+                Authority = "http://localhost:5000",
+                ClientId = "implicit",
+
+                TokenValidationParameters = new TokenValidationParameters
+                {
+                    NameClaimType = "name",
+                    RoleClaimType = "role"
+                }
+            });
+
 
             if (env.IsDevelopment())
             {

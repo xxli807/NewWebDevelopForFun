@@ -10,6 +10,8 @@ namespace ReactTypescript.Controllers
     public class AccountController : Controller
     {
 
+        //we will use the identity server later soon
+        //for now just validation the user name and pwd
         [HttpPost]
         public string ValidateLogin(string email, string password)
         {
