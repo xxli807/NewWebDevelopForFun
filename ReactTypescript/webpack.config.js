@@ -1,7 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader')
 
 module.exports = {
     module: {
@@ -48,8 +47,7 @@ module.exports = {
             'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
         }),
          // preload chunks
-        new PreloadWebpackPlugin(),
-        new CheckerPlugin()
+        new PreloadWebpackPlugin()
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx' ]
@@ -60,5 +58,10 @@ module.exports = {
         historyApiFallback: true,
         port: 3000,
         host: 'localhost',
+        proxy: {
+            '/api/*': 'http://localhost:5000',
+            '/content/*': 'http://localhost:5000',
+            '/images/*': 'http://localhost:5000'
+        }
     }
 };

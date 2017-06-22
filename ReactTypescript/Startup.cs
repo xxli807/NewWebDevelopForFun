@@ -11,6 +11,8 @@ using IdentityServer4;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using ReactTypescript.Persistence.DBContext;
+using ReactTypescript.Services.Data.Interfaces;
+using ReactTypescript.Services.Data.Imps;
 
 namespace ReactTypescript
 {
@@ -37,6 +39,9 @@ namespace ReactTypescript
              
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddTransient<IAccountService, AccountService>();
+
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
@@ -54,14 +59,15 @@ namespace ReactTypescript
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseIdentityServer();
+            //app.UseIdentityServer();
 
             // middleware for external openid connect authentication
+            //and 
             app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
             {
                 SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
                 SignOutScheme = IdentityServerConstants.SignoutScheme,
-
+                RequireHttpsMetadata = false, //for local only
                 DisplayName = "OpenID Connect",
                 Authority = "http://localhost:5000",
                 ClientId = "implicit",
@@ -83,10 +89,7 @@ namespace ReactTypescript
                 app.UseExceptionHandler("/Home/Error");
             }
              
-            app.UseMvc();
-
-             
-
+            app.UseMvc(); 
 
         }
     }

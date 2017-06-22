@@ -21,7 +21,7 @@ namespace ReactTypescript.Persistence.DBContext
 
         public bool IsDelete { get; set; }
 
-        public Staff StaffId { get; set; }
+        public Staff Staff { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime CreateAt { get; set; }

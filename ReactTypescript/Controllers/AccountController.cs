@@ -13,9 +13,10 @@ namespace ReactTypescript.Controllers
         //we will use the identity server later soon
         //for now just validation the user name and pwd
         [HttpPost]
-        public string ValidateLogin(string email, string password)
+        public bool Login(string email, string password)
         {
-            return null;
+            //should return the access token here
+            return true;
         }
 
 
