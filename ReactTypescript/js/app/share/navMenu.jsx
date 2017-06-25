@@ -37,4 +37,4 @@ export class NavMenu extends React.Component {
         </div>;
     }
 }
-//# sourceMappingURL=navMenu.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/app/share/navMenu.jsx.map

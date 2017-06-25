@@ -6,7 +6,10 @@
     "target": "es6",
     "jsx": "preserve",
     "experimentalDecorators": true,
+    "mapRoot":"mapFiles", 
     "sourceMap": true,
+    "sourceRoot": "mapFiles",
+    "outDir": "js",
     "skipDefaultLibCheck": true
   },
   "exclude": [

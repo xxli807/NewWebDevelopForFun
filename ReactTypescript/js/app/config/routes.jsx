@@ -9,4 +9,4 @@ export default (<div>
             <Route path='fetchdata'></Route>
         </Route>
     </div>);
-//# sourceMappingURL=routes.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/app/config/routes.jsx.map

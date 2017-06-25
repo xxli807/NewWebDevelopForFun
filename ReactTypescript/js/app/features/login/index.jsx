@@ -14,4 +14,4 @@ export const Login = (props) => {
       </div>
     </div>);
 };
-//# sourceMappingURL=index.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/app/features/login/index.jsx.map

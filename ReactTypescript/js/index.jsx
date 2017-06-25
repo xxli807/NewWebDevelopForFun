@@ -12,4 +12,4 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render((<Provider store={store}>
       <Router history={history} children={routes}/>
     </Provider>), document.getElementById('app'));
-//# sourceMappingURL=index.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/index.jsx.map

@@ -14,4 +14,4 @@ export class Layout extends React.Component {
         </div>;
     }
 }
-//# sourceMappingURL=layout.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/app/share/layout.jsx.map

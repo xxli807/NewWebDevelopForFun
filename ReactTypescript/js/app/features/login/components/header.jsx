@@ -4,4 +4,4 @@ export const Header = () => {
   	     <h3 className="panel-title">Please sign in</h3>
   	   </div>);
 };
-//# sourceMappingURL=header.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/app/features/login/components/header.jsx.map

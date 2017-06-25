@@ -11,4 +11,4 @@ export default function configureStore(initialState) {
 function buildRootReducer(allReducers) {
     return combineReducers(Object.assign({}, allReducers, { routing: routerReducer }));
 }
-//# sourceMappingURL=configureStore.jsx.map
+//# sourceMappingURL=C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/app/config/configureStore.jsx.map
