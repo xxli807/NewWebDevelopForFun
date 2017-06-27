@@ -1,7 +1,7 @@
 
 import { ActionCreatorGeneric } from 'redux-typed';
 // can inmport each feature's reducers
-
+import { loginReducer } from '../features/logIn/reducers/login';
 
 
 // top-level state object
@@ -13,7 +13,7 @@ export interface ApplicationState {
 // the reducer with the matching name. It's important that the names match exactly, and that the reducer
 // acts on the corresponding ApplicationState property type.
 export const reducers = {
-
+    login: loginReducer
 };
 
 // This type can be used as a hint on action creators so that its 'dispatch' and 'getState' params are

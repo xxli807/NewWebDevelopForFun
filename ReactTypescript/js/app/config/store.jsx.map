@@ -1,1 +1,1 @@
-{"version":3,"file":"store.jsx","sourceRoot":"C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/","sources":["app/config/store.tsx"],"names":[],"mappings":"AAcA,MAAM,CAAC,MAAM,QAAQ,GAAG,EAEvB,CAAC"}
+{"version":3,"file":"store.jsx","sourceRoot":"C:/Users/xin/Documents/GitHub/NewWebDevelopForFun/ReactTypescript/mapFiles/","sources":["app/config/store.tsx"],"names":[],"mappings":"AAGA,OAAO,EAAE,YAAY,EAAE,MAAM,kCAAkC,CAAC;AAWhE,MAAM,CAAC,MAAM,QAAQ,GAAG;IACpB,KAAK,EAAE,YAAY;CACtB,CAAC"}

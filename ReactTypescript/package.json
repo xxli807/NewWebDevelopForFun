@@ -48,6 +48,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "@types/whatwg-fetch": "0.0.33",
     "babel-core": "^6.25.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
