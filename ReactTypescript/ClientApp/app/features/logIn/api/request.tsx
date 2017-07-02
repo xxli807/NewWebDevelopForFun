@@ -16,11 +16,6 @@ function makePromise(url: string, options: any) {
         }
         return response;
       })
-    //   .then(response => response.json())
-    //   .then(json => {
-    //     // todo: consider handle custom errors?
-    //     return resolve(json);
-    //   })
       .catch(error => {
         reject(error);
       });
