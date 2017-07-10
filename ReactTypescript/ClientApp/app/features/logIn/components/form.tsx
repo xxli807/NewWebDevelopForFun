@@ -19,9 +19,9 @@ class LoginForm extends React.Component<any, any> {
 
    private performSignin = () => {
     let loginInfo = new LoginModel();
-    loginInfo.login = this.passwordInput.value;
+    loginInfo.login = this.emailInput.value;
     loginInfo.password = this.passwordInput.value;
-
+    debugger
     this.props.loginRequest(loginInfo);
   }
 

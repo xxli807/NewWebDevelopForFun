@@ -8,6 +8,7 @@ export const actionTypes = {
 
 
 export const loginRequest = (payload: any) => {
+    debugger
     const promise = loginAPI.Signin(payload);
 
     // promise.then(
